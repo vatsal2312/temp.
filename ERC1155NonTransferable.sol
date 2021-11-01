@@ -143,6 +143,6 @@ contract ERC1155NonTransferable is
      * and we can declare it as a message sender
      */
     function _msgSender() internal view virtual override returns (address payable) {
-        return msg.sender == address(this) ? payable(owner()) : msg.sender;
+        return msg.sender == address(this) ? payable(owner()) : payable(msg.sender);
     }
 }
